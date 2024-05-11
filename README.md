@@ -1,3 +1,3 @@
 # Homelab
 
-Bootstrap and manage homelab setup from a workstation.
+Bootstrap and manage homelab with k3d and tinkerbell
