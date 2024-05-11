@@ -10,7 +10,7 @@ if [ ! -d bootstrap ]; then mkdir bootstrap; fi
 # Create cluster
 k3d cluster create mgmt --volume $(pwd)/bootstrap:/var/lib/rancher/k3s/server/manifests/bootstrap 
 
-# Wait until podCIDR is returns
+# Wait until podCIDR is returned
 until [[ $(kubectl get nodes -o jsonpath='{.items[*].spec.podCIDR}') =~ ^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3} ]]; do 
   sleep 1
 done 
